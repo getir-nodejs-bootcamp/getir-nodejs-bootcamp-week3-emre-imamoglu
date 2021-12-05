@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const {getHomePage, getAboutPage, getContactPage} = require('../controllers/app.conroller')
+const {getPlayer,getPlayers,addPlayer,updatePlayer,deletePlayer} = require('../controllers/playerConroller')
 
-router.get("/", getHomePage);
-router.get("/about",getAboutPage);
-router.get("/contact",getContactPage);
-
+router.get("/player", getPlayers);
+router.get("/player/:id",getPlayer);
+router.post("/player",addPlayer);
+router.put("/player/:id",updatePlayer);
+router.delete("/player/:id",deletePlayer)
 module.exports = router;
